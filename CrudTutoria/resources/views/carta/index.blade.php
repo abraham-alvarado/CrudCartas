@@ -34,11 +34,13 @@ Tabla de Colecciones
             <td>{{ $carta->coleccion }}</td>
             <td>{{ $carta->rareza }}</td>
             <td>
-                 <a href="{{ url('/carta/'.$carta->id.'/edit') }}">Editar</a>|
+                <a href="{{ url('/carta/'.$carta->id.'/edit') }}">Editar</a>
+                <span> | </span>
                 <form action="{{ url('/carta/'.$carta->id) }}" method="POST">
                     @csrf
                     {{method_field('DELETE')}}
                     <input type="submit" value="Eliminar" onclick="return confirm('¿Seguro?')">
+                </form>
             </td>
         </tr>
         @endforeach
